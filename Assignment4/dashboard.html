@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background-color: #eef2f7;
+        }
+
+        .card {
+            border-radius: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🌤 Weather Dashboard</h2>
+
+    <!-- Weather Cards -->
+    <div class="row text-center mb-4">
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h5>Temperature</h5>
+                <h3 id="temp">--°C</h3>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h5>Humidity</h5>
+                <h3 id="humidity">--%</h3>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h5>Wind Speed</h5>
+                <h3 id="wind">-- km/h</h3>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h5>Condition</h5>
+                <h3 id="condition">--</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row">
+        <div class="col-md-6">
+            <canvas id="tempChart"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="humidityChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Sample Data (can be replaced with API later)
+    const weatherData = {
+        temperature: 32,
+        humidity: 65,
+        wind: 15,
+        condition: "Sunny",
+        weeklyTemp: [30, 32, 35, 33, 31, 34, 36],
+        weeklyHumidity: [60, 65, 70, 68, 64, 66, 72]
+    };
+
+    // Update Cards
+    document.getElementById("temp").innerText = weatherData.temperature + "°C";
+    document.getElementById("humidity").innerText = weatherData.humidity + "%";
+    document.getElementById("wind").innerText = weatherData.wind + " km/h";
+    document.getElementById("condition").innerText = weatherData.condition;
+
+    // Temperature Chart
+    new Chart(document.getElementById("tempChart"), {
+        type: 'line',
+        data: {
+            labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+            datasets: [{
+                label: "Temperature (°C)",
+                data: weatherData.weeklyTemp,
+                borderWidth: 2,
+                fill: true
+            }]
+        }
+    });
+
+    // Humidity Chart
+    new Chart(document.getElementById("humidityChart"), {
+        type: 'bar',
+        data: {
+            labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+            datasets: [{
+                label: "Humidity (%)",
+                data: weatherData.weeklyHumidity,
+                borderWidth: 1
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>
