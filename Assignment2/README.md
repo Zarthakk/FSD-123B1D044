@@ -1,4 +1,4 @@
-# Assignment 2 - Design a Personal Portfolio Page using HTML and CSS. Use bootstrap CDN if required.
+# Assignment 2 - Design a Personal Portfolio Page using HTML and CSS.
 
 ## 📌 Problem Statement
 Design a card layout using CSS Box Model:
