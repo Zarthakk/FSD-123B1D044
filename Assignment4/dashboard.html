@@ -11,20 +11,8 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <style>
-        body {
-            background-color: #eef2f7;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .card {
-            border-radius: 15px;
-        }
-
-        h2 {
-            text-align: center;
-            margin: 20px;
-        }
-    </style>
 </head>
 <body>
 
@@ -60,6 +48,10 @@
                 <h3 id="condition">--</h3>
             </div>
         </div>
+    </div>
+
+    <div class="text-center mb-3">
+        <button class="btn btn-primary" onclick="updateWeather()">Refresh Data</button>
     </div>
 
     <!-- Charts -->
@@ -101,7 +93,16 @@
                 borderWidth: 2,
                 fill: true
             }]
+        },
+            options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Weekly Temperature'
+            }
         }
+    }
+
     });
 
     // Humidity Chart
@@ -114,8 +115,27 @@
                 data: weatherData.weeklyHumidity,
                 borderWidth: 1
             }]
+        },
+            options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Weekly Humidity'
+            }
         }
+    }
+
     });
+
+        function updateWeather() {
+        weatherData.temperature = Math.floor(Math.random() * 10) + 30;
+        weatherData.humidity = Math.floor(Math.random() * 20) + 60;
+        weatherData.wind = Math.floor(Math.random() * 10) + 10;
+
+        document.getElementById("temp").innerText = weatherData.temperature + "°C";
+        document.getElementById("humidity").innerText = weatherData.humidity + "%";
+        document.getElementById("wind").innerText = weatherData.wind + " km/h";
+    }
 </script>
 
 </body>
