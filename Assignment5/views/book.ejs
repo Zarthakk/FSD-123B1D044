@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">TravelX 🌍</nav>
+
+<div class="container">
+    <h2 style="text-align:center;">Book Your Trip</h2>
+
+    <form method="POST" action="/book">
+        <input type="hidden" name="packageName" value="<%= pkg.name %>">
+
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button class="btn">Confirm Booking</button>
+    </form>
+</div>
+
+</body>
+</html>

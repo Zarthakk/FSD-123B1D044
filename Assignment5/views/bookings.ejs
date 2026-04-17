@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">TravelX 🌍</nav>
+
+<div class="container">
+    <h2>Your Bookings</h2>
+
+    <ul>
+        <% bookings.forEach(b => { %>
+            <li>
+                <b><%= b.name %></b> booked <%= b.packageName %> ✈️
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+</body>
+</html>
