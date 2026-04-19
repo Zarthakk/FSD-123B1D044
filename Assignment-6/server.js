@@ -5,7 +5,7 @@ const path = require("path");
 const Appointment = require("./models/Appointment");
 
 const app = express();
-const PORT = 3001;
+const PORT = 3006;
 const mongoURI =
   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/appointment_booking_db";
 

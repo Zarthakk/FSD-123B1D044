@@ -62,7 +62,7 @@ Assignment-6/
 1. Install dependencies: npm install
 2. Start MongoDB: brew services start mongodb-community
 3. Run server: node server.js
-4. Open in browser: http://localhost:3001
+4. Open in browser: http://localhost:3006
 
 ---
 
