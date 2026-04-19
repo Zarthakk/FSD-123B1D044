@@ -1,0 +1,38 @@
+<%- include("partials/header", { pageTitle: pageTitle }) %>
+
+<main class="hero-page">
+  <section class="hero-banner glass">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Assignment 6 • Advanced Booking Experience</p>
+      <h1>Book smarter with a premium online appointment dashboard.</h1>
+      <p class="hero-text">
+        Manage appointments through a polished full-stack web app built with
+        Node.js, Express, EJS, and MongoDB. Clean flow, responsive design, and
+        real database storage included.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/book" class="btn btn-primary">Book Appointment</a>
+        <a href="/appointments" class="btn btn-secondary">View Appointments</a>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card glass">
+          <span>Full Stack</span>
+          <strong>Node + Express + EJS</strong>
+        </article>
+        <article class="stat-card glass">
+          <span>Database Ready</span>
+          <strong>MongoDB with Mongoose</strong>
+        </article>
+        <article class="stat-card glass">
+          <span>Premium UI</span>
+          <strong>Glassmorphism + Motion</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

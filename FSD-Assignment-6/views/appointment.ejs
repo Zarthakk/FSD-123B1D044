@@ -1,0 +1,53 @@
+<%- include("partials/header", { pageTitle: pageTitle }) %>
+
+<main class="page-content">
+  <section class="list-header glass">
+    <div>
+      <p class="eyebrow">Appointment Overview</p>
+      <h1>Saved Appointments</h1>
+      <p>All confirmed bookings appear here with quick edit and delete actions.</p>
+    </div>
+    <a href="/book" class="btn btn-primary">New Booking</a>
+  </section>
+
+  <% if (successMessage) { %>
+    <div class="alert success-alert"><%= successMessage %></div>
+  <% } %>
+
+  <section class="appointments-grid">
+    <% if (appointments.length === 0) { %>
+      <article class="empty-state glass">
+        <h2>No appointments booked yet</h2>
+        <p>Start by creating your first booking and it will appear here instantly.</p>
+        <a href="/book" class="btn btn-secondary">Create First Appointment</a>
+      </article>
+    <% } %>
+
+    <% appointments.forEach((appointment) => { %>
+      <article class="appointment-card glass">
+        <div class="card-top">
+          <span class="badge">Confirmed</span>
+          <h2><%= appointment.name %></h2>
+        </div>
+
+        <div class="appointment-meta">
+          <p><strong>Date:</strong> <%= appointment.date %></p>
+          <p><strong>Time:</strong> <%= appointment.time %></p>
+        </div>
+
+        <div class="card-actions">
+          <a href="/edit/<%= appointment._id %>" class="btn btn-secondary">Edit</a>
+          <a
+            href="/delete/<%= appointment._id %>"
+            class="btn btn-danger"
+            onclick="return confirm('Delete this appointment?');"
+          >
+            Delete
+          </a>
+        </div>
+      </article>
+    <% }) %>
+  </section>
+</main>
+
+<%- include("partials/footer") %>
