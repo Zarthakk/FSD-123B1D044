@@ -1,0 +1,24 @@
+{
+  "name": "student-feedback-backend",
+  "version": "1.0.0",
+  "description": "Backend server for the Student Feedback Review System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "mongoose",
+    "feedback-system"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "mongoose": "^8.23.0"
+  },
+  "type": "commonjs"
+}
